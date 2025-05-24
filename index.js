@@ -7,7 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/ping", (req, res) => {
+    res.send("pong")
+})
 app.use("/api", downloadRoutes);
+
 
 const PORT = 3000;
 app.listen(PORT, () => {
